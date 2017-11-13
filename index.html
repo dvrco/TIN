@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>TIN - JS #2</title>
+	<style>
+		.container{
+			width: 100%;
+			position: relative;
+			text-align: center;
+		}
+		#square{
+			width: 200px;
+			height: 200px;
+			background-color: red;
+			position: absolute;
+		}
+		
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div id="square"></div>
+		<h1 id="textAlert"></h1>
+	</div>
+
+	<script type="text/javascript">
+
+		var square = document.getElementById("square");
+		console.log('HERE',square);
+		var position = 0;
+		var width = document.getElementsByClassName("container")[0].offsetWidth;
+		console.log('width',width);
+
+		setInterval(function(){
+
+			if(position == ( width - square.offsetWidth)){
+				var textAlert = document.getElementById("textAlert");
+				textAlert.innerHTML = "Koniec animacji";
+
+				// square.style.display = "none";
+				// alert("obiekt dojechał do końca");
+				// square.style.left = position + 'px';
+			}else{
+				position ++;
+				square.style.left = position + 'px';
+			}
+
+		}, 1);
+
+	</script>
+</body>
+</html>
